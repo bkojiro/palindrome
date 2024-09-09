@@ -16,24 +16,26 @@ int main () {
 
   //remove punctuation/white spaces
   char forward[80];
+  cout << "input length: " << strlen(input) << endl;
+  int count = 0;
   for (int i = 0; i < strlen(input); i++){
     if (!ispunct(input[i]) && !isspace(input[i])) {
-      forward[i] = char(tolower(input[i]));
-      cout << forward[i];
+      forward[count] = char(tolower(input[i])); //builds forward if the character is a letter
+      count++;
     }
   }
-  cout << endl;
+  forward[count] = '\0'; //terminates the string
+  cout << "forward length: " << strlen(forward) << endl;
+  cout << forward << endl;
 
   //copy and reverse array
   char reversedStr[80];
-  for (int i = 0; i < strlen(input); i++) {
-    reversedStr[strlen(forward) - i] = forward[i]; //this is messing up
+  for (int i = 0; i <= strlen(forward); i++) {
+    reversedStr[i] = char(forward[strlen(forward) - 1 - i]); //can't include the terminating character at the end of forward[]
   }
-  for (int i = 0; i < strlen(input); i++) {
-    cout << reversedStr[i];
-  }
-  cout << endl;
-  
+  reversedStr[count] = '\0';
+  cout << reversedStr << endl;
+
   //compare arrays and print
   if (strcmp(forward, reversedStr) == 0) {
     cout << "Palindrome";
