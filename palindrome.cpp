@@ -25,8 +25,8 @@ int main () {
     }
   }
   forward[count] = '\0'; //terminates the string
-  cout << "forward length: " << strlen(forward) << endl;
-  cout << forward << endl;
+  //cout << "forward length: " << strlen(forward) << endl;
+  //cout << forward << endl;
 
   //copy and reverse array
   char reversedStr[80];
@@ -34,7 +34,7 @@ int main () {
     reversedStr[i] = char(forward[strlen(forward) - 1 - i]); //can't include the terminating character at the end of forward[]
   }
   reversedStr[count] = '\0';
-  cout << reversedStr << endl;
+  //cout << reversedStr << endl;
 
   //compare arrays and print
   if (strcmp(forward, reversedStr) == 0) {
