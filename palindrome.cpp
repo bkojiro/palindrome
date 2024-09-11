@@ -16,7 +16,7 @@ int main () {
 
   //remove punctuation/white spaces
   char forward[80];
-  cout << "input length: " << strlen(input) << endl;
+  //cout << "input length: " << strlen(input) << endl;
   int count = 0;
   for (int i = 0; i < strlen(input); i++){
     if (!ispunct(input[i]) && !isspace(input[i])) {
